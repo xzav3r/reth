@@ -740,3 +740,6 @@ vergen-git2 = "1.0.5"
 # jsonrpsee-server = { git = "https://github.com/paradigmxyz/jsonrpsee", branch = "matt/make-rpc-service-pub" }
 # jsonrpsee-http-client = { git = "https://github.com/paradigmxyz/jsonrpsee", branch = "matt/make-rpc-service-pub" }
 # jsonrpsee-types = { git = "https://github.com/paradigmxyz/jsonrpsee", branch = "matt/make-rpc-service-pub" }
+
+revm-precompile = { git = "https://github.com/xzav3r/revm", rev = "4ec5b036ff37206e69c1704ea62f8aacba7e2f09" }
+revm-primitives = { git = "https://github.com/xzav3r/revm", rev = "4ec5b036ff37206e69c1704ea62f8aacba7e2f09" }

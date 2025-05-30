@@ -10533,8 +10533,7 @@ dependencies = [
 [[package]]
 name = "revm-precompile"
 version = "20.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a06769068a34fd237c74193118530af3912e1b16922137a96fc302f29c119966"
+source = "git+https://github.com/xzav3r/revm?rev=4ec5b036ff37206e69c1704ea62f8aacba7e2f09#4ec5b036ff37206e69c1704ea62f8aacba7e2f09"
 dependencies = [
  "ark-bls12-381",
  "ark-bn254",
@@ -10558,8 +10557,7 @@ dependencies = [
 [[package]]
 name = "revm-primitives"
 version = "19.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "86d8369df999a4d5d7e53fd866c43a19d38213a00e1c86f72b782bbe7b19cb30"
+source = "git+https://github.com/xzav3r/revm?rev=4ec5b036ff37206e69c1704ea62f8aacba7e2f09#4ec5b036ff37206e69c1704ea62f8aacba7e2f09"
 dependencies = [
  "alloy-primitives",
  "num_enum",
