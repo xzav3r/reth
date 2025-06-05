@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  reth:
+    image: xzav3r/reth:v1.4.3
+    container_name: reth-dev-node
+    ports:
+      - "8545:8545"    # HTTP RPC 端口
+      - "8546:8546"    # WebSocket RPC 端口
+      - "30303:30303"  # P2P 端口
+      - "9001:9001"    # 指标端口
+    volumes:
+      - ./data:/root/.local/share/reth
+    command: >
+      node
+      --dev
+      --dev.block-time=2000ms
+      --http
+      --http.addr 0.0.0.0
+      --http.port 8545
+      --http.api eth,net,web3,debug,trace,txpool
+      --ws
+      --ws.addr 0.0.0.0
+      --ws.port 8546
+      --ws.api eth,net,web3,debug,trace
+      --metrics 0.0.0.0:9001
+      --txpool.pending-max-count 1000000
+      --txpool.pending-max-size 2000
+      --txpool.queued-max-count 1000000
+      --txpool.queued-max-size 2000
+      --txpool.max-account-slots 1000000
+      --txpool.minimal-protocol-fee 1
+      --engine.precompile-cache
+    environment:
+      - RUST_LOG=info
+      - RUST_BACKTRACE=1
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8545"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
